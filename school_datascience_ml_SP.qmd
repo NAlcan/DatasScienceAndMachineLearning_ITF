@@ -86,7 +86,8 @@ Input -> weight -> bias -> output
 
 Finding the minimum of a function;
   - Look for the best weights values, minimizing the error;
-  - Takes steps proportional to the negative of the gradient of the function at the current point.
+  - Takes steps proportional to the negative of the gradient of the function at the current point.mong several activation functions, the Rectified Linear Unit
+(ReLU) is the most popula
   - Gradient is a vector that is tangent of a function and points in the direction of greatest increase of this function
 
 * "Gradient" (partial derivative for every input variable of function) es una función matematica que recorre el espacio, cambiando de uno los valores y viendo como impacta el resultado en el error
@@ -114,8 +115,41 @@ Finding the minimum of a function;
 
 Cuando los datos no son linealmente separables, las cosas se empiezan a complicar. Se logra modficando las _funciones de activación_ a otras que permitan construir "regiones" de separación no lineales
 
-* Perceptron es una forma de resolverlo, como una combinación de diferentes layers. Ej una linear y otra no linear
+* Perceptron es una forma de resmong several activation functions, the Rectified Linear Unit
+(ReLU) is the most populaolverlo, como una combinación de diferentes layers. Ej una linear y otra no linear
 
 ### Multilayer Perceptron
 
 * Grupo de neuronas que combinadas, permiten un mayor número de funciones de decisión
+
+# Dia 2
+## Convolutional neural networks (CNN). A. Falcao
+CNN parte central del deep laerning
+
+* Pasos: deteccion, segementacion, explainable encoders
+
+* CNN are neural networks composed by and _encoder_ for feature extraction and a _predictor_ for classification/regresion
+
+* The predictor may use the activation map from multiple convolutional blocks (usualmente el caso de segmentacion)
+
+#### basic definitions and image processing operations
+
+* Multichannel image: Canales en los que se puede descomponer una imagen; El numero de convolutional filters que se usen, se transforma en el numero de canales. Un imagen 3D en escala de gris de un tomografo, es en un canal. pero si luego aplicamos 10 filtros, se transforma en una imagen de 10 canales
+$m$ es el número de canales. Una imagen visible en RGB, m=3. 
+Para m=3 canales, cada pixel p es representado por un punto $I(p) = (I1(p), I2(p), I3(p)) \in R^{3}$
+
+* Adjacency relation (A); es una relacion binaria que considera la disntancia entre pixels; CNNs adoptan una relacion _rectangular_ en 2D.
+Es decir mira el pixl del centro y todos los adjacentes que formen un rectagulo alrededor del
+
+* Image patch; La concatenacion de los atributos I(q1)*I(q2)*...*I(qn) de los pixeles adyacentes de p, que definene un Image Patch; Una imagen con 3 canales y 9 vecinos tiene un patch que es un vector de 27 elementos;
+
+* kernel; es un vector de pesos del mismo tamano que los images patches; A kernel bank es un set de kernels;
+
+*  The convolution between an input image (activation map), with m channels, and a kernel bank with b kernels, with m channels each, outputs an activation map with b channels.
+__Zero-padding__ is usually adopted when defining X(p). Kernel and patch must have the same shape before their vectorization. This example shows the case the input image and kernel have single channels;
+Es un parametro que permite mantener la dimension de la imagen orifinal luego de aplicar el kernel patch
+
+* Activation; mong several activation functions, the Rectified Linear Unit (ReLU) is the most popular
+
+* Em una convolution, cada pixel un perceptron con los mismos weights
+
