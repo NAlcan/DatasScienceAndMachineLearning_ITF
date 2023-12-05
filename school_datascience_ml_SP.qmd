@@ -4,6 +4,8 @@ format: html
 date: "`r Sys.Date()`"
 ---
 
+* Dropbox folder with materials: bit.ly/ai2-dsml23?r=qr
+
 # Dia 1
 
 ### Introduction to Machine Learning. R Cobe
@@ -152,4 +154,21 @@ Es un parametro que permite mantener la dimension de la imagen orifinal luego de
 * Activation; mong several activation functions, the Rectified Linear Unit (ReLU) is the most popular
 
 * Em una convolution, cada pixel un perceptron con los mismos weights
+
+* Pooling; agregar la informacion en la mismbit.lya locacion; Es una frma de dowsample la informacion de la imagen. Por ejemplo, consiederando un pixel si y uno no, tanto en la vertical como en la horizontal.
+
+* Normalizations may be applied to any image with channels or, in batch, to a set m-channel images before/after any step in a convolutional layer.
+They are important to avoid discrepancies among local activations along the network. They create a new image with m channels or a new set m-channel images.
+_Batch normalization_ is very useful to standardize local activations and eliminate the need of bias learning.
+
+* Si convolucionamos una imagen con un set de filtros. los filtros se encargan de extraer los distintos patrones de la imagen. Cada filtro va a llevar una funcion de activacion
+
+* __Flattening__ is the vectorization of each channel $B_{k} , k = 1, 2, . .. , b$, of an activation map followed by their concatenation ( usado en contexto de clasificación)
+
+### CNNs for image identification and segmentation
+
+* CNNs for identification and segmentation mainly differ in the predictor
+ - For identification, they use flattening followed by a pattern classifier, usually a multi-layer perceptron (MLP) due to the training by backpropagation. However, it could be a support vector machine (SVM)
+
+* For segmentation, they may use transposed and normal convolutions, batch normalization, activations, skip connections, and post-processing. Famous examples are the U-shaped architectures
 
