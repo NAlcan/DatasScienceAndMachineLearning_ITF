@@ -4,7 +4,7 @@ format: html
 date: "`r Sys.Date()`"
 ---
 
-* Dropbox folder with materials: bit.ly/ai2-dsml23?r=qr
+* Dropbox folder with materials: bit.ly/ai2-dsml2023
 
 # Dia 1
 
@@ -72,7 +72,7 @@ date: "`r Sys.Date()`"
   
 Los w se obtienen computacionalmente
 
-El erro no se puede evaluar unicamente como $y - \hat{y}$ porque podemos obtener tanto valores negativos como positivos, dificil de cuantificar la magnitud del error. Por eso se transforman en errores cuadráticos mediante: $(y - \hat{y})^2$
+El erro no se puede evaluar unicamente como $y - \hat{y}$ porque podemos obtener tanto valores negativos como positivos, dificil de cuantificar la magnitud LIDS-UNICAMP/FLIM-Builderdel error. Por eso se transforman en errores cuadráticos mediante: $(y - \hat{y})^2$
 El problema de esta métrica es que puede variar la escala si transformamos los datos o no. Por lo que por is sola no dice mucho. Es útil para comparar modelos pero no para presentar los resultados
 
 Para una Nnet la ecuación $\hat{y} = W \times x$ comparte un intercepto unico y el modelo solo puede estimar la pendiente. 
@@ -163,12 +163,15 @@ _Batch normalization_ is very useful to standardize local activations and elimin
 
 * Si convolucionamos una imagen con un set de filtros. los filtros se encargan de extraer los distintos patrones de la imagen. Cada filtro va a llevar una funcion de activacion
 
-* __Flattening__ is the vectorization of each channel $B_{k} , k = 1, 2, . .. , b$, of an activation map followed by their concatenation ( usado en contexto de clasificación)
+* __Flattening__ is the vectorization of each channel $B_{k} , k = 1, 2,... , b$, of an activation map followed by their concatenation ( usado en contexto de clasificación)
 
 ### CNNs for image identification and segmentation
 
 * CNNs for identification and segmentation mainly differ in the predictor
- - For identification, they use flattening followed by a pattern classifier, usually a multi-layer perceptron (MLP) due to the training by backpropagation. However, it could be a support vector machine (SVM)
+ - For identificExplainableation, they use flattening followed by a pattern classifier, usually a multi-layer perceptron (MLP) due to the training by backpropagation. However, it could be a support vector machine (SVM)
 
 * For segmentation, they may use transposed and normal convolutions, batch normalization, activations, skip connections, and post-processing. Famous examples are the U-shaped architectures
+
+### Explainable encoders for identification and segmentation
+
 
