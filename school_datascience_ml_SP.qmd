@@ -1,0 +1,121 @@
+---
+title: "2nd School DDSS and ML"
+format: html
+date: "`r Sys.Date()`"
+---
+
+# Dia 1
+
+### Introduction to Machine Learning. R Cobe
+
+* How to estimate the function f ?
+  - The statistical process starts from a set of known events
+    + Training set
+* Each event has one or more predictor variable values X : X1 , X2 , ..., Xn and an output value Y
+* Evaluation of function f performance
+* Distance between the predicted value and the observed value ε
+* Use statistical learning on the training set to estimate function f ;
+  - Find a function $\hat{f}$ such that Y ≈ $\hat{f}(X)$ for any observation $(X , Y)$
+  
+  
+* Si pensamos en una regresion lineal $f(x) = ax +b$
+ - $f(x)$ y $x$ estàn dados, porque fueron obtenidos en el proceso que genero los datos. a y b son parametros a estimar por el modelo
+  - $ax +b$ representa el espacio de la "hipotesis" sobre la que vamos a buscar los parametros que tengan una buen a performance en set de entrenamiento.
+  - Diremos que la hipotesis "generaliza" bien si predice adecuadamente nuevos casos $y$
+  - Estamos buscando aprender la distribución condicional de $P(y|x)$
+  
+* Si tenemos dos "hipotesis" consistentes con los datos, ambas representan "bien" los datos, la mas simple es la mejor: **Ockham`s razor**
+
+
+* Iterative Machine Learning Design
+  - Define the problem to be tackled with a predictive model
+  - Organize data according to the defined problem
+  - Define an evaluation metric
+  - Split the data into training and testing according to the metric
+  - Inspect the solution
+  - Propose improvements to the model or data organization
+
+* ML solo piensa en números. Incluso cuando nosotros le damos una etiqueta o un string al modelo, internamente es convertido a valores numéricos
+
+### Introduction to Artificial Neural Networks
+
+
+* Lo que constituye la "información" del cerebro no son las neuronas en si, sino como esta organizada su estructura, ya es lo que permite la transferencia de la información
+
+* La natrualeza de las neuronas es recibir un "input" de otras unidades y decidir en base a umbrales si disparar o no una "respuesta"
+
+##### How do they work?
+
+* Control the influence from one neuron on another:
+  - Excitatory when weight is positive; or
+  - Inhibitory when weight is negative;
+
+* Nucleus is responsible for summing the incoming signals;
+
+* __If the sum is above some threshold, then fire!__
+
+![](img/nnet_structures.png)
+
+##### Function Approximation Machines
+
+* Datasets as composite functions: $y = f^{∗}(x)$
+* Maps x input to a category (or a value) y;
+* Learn synapses weights and approximate y with $\hat{y}$:
+* $\hat{y} = f (x; w)$
+* Learn the w parameters (Los weights son los parametros a estimar)
+
+* Tenemos:
+  - _Input, Output and Hidden layers_
+  - _Hidden_ as "not defined by the output"
+  
+Los w se obtienen computacionalmente
+
+El erro no se puede evaluar unicamente como $y - \hat{y}$ porque podemos obtener tanto valores negativos como positivos, dificil de cuantificar la magnitud del error. Por eso se transforman en errores cuadráticos mediante: $(y - \hat{y})^2$
+El problema de esta métrica es que puede variar la escala si transformamos los datos o no. Por lo que por is sola no dice mucho. Es útil para comparar modelos pero no para presentar los resultados
+
+Para una Nnet la ecuación $\hat{y} = W \times x$ comparte un intercepto unico y el modelo solo puede estimar la pendiente. 
+
+$\hat{y} = Wx + b$ le agrega un intercepto, que en Nnet se llama el sesgo (bias)
+
+Input -> weight -> bias -> output
+
+
+#### How to detect the correct weights
+
+* Gradient descent:
+
+Finding the minimum of a function;
+  - Look for the best weights values, minimizing the error;
+  - Takes steps proportional to the negative of the gradient of the function at the current point.
+  - Gradient is a vector that is tangent of a function and points in the direction of greatest increase of this function
+
+* "Gradient" (partial derivative for every input variable of function) es una función matematica que recorre el espacio, cambiando de uno los valores y viendo como impacta el resultado en el error
+
+* "cost" es equivalente a error function: $j(w)$
+
+* El gradeint es una linea tangecial a la estimacion del erro. Errores alto dan lineas con pendientes grandes, a me dida que el error decrece hacia un minimo (hiperbola negativa) la pendiente de esta recta tangencial tiende a cero (recta horizontal)
+
+#### Perceptron 
+
+* Primer modelo de redes Neuronales. Basado en los trabajos de McCulloch and Pitts.
+
+* El objetivo es encontrar un hiperplano ("decisión boundary") donde los datos sean completamente separables. Basado en los pesos estimados, un valor umbral y el coeficiente $\alpha$ que indica cuanta importancia le damos a cada paso dinde se actualizan los pesos. 
+
+* Esto nos conduce a que con un mismo algoritmo y set de datos en distintas instancias podemos obtener distintos hiperplanos donde en todos los casos los datos son linealmente separables. Como no conocemos ese hiperplano y en contexto ML solo nos importa las predicciones no importa.
+
+* How does its algorithm work? Let’s see:
+1. Assign random weights to w.
+2. Initialize $\alpha$.
+3. $t = 0$.
+4. For each sample $x_{i} \in X^1$ , do:
+  $w^(t+1) = w^(t) + \alpha(yi − h_{w^{(t)}} (x_{i} ))x_{i}$
+5. Repeat step 4 until some convergence criterion is established.
+
+
+Cuando los datos no son linealmente separables, las cosas se empiezan a complicar. Se logra modficando las _funciones de activación_ a otras que permitan construir "regiones" de separación no lineales
+
+* Perceptron es una forma de resolverlo, como una combinación de diferentes layers. Ej una linear y otra no linear
+
+### Multilayer Perceptron
+
+* Grupo de neuronas que combinadas, permiten un mayor número de funciones de decisión
