@@ -174,4 +174,48 @@ _Batch normalization_ is very useful to standardize local activations and elimin
 
 ### Explainable encoders for identification and segmentation
 
+# Dia 3
+
+## Generative models (L.Oliveira)
+
+#### Generative models at glance
+* Ejemplos
+  - Google duplex: natural chatting with humans (conducting natural conversations, fully autonomous, synchronization with the interlocutors). Chat que conversa con humanos. el mayor desafio es que el algoritmo respete las pausas de la conversacion y los silencios (synchronization)
+  - Voice cloning (transalate conversations using the original voice)
+  - Automatic staning (tincion automatica de imagenes de tejido biologicos para mejorar diagnosticos)
+  - Leonardo.ai (https://leonardo.ai/; image generator from text)
+* Generative models: ML models that learn to generate new data samples, similar to the training data
+* Challeenges for generative models : Complex data (requires very large models to capture all nuances of the features and distributions) and complex models (powerfull processing, difficulty to assess performance, complex control to generate data diversity)
+
+#### mathematics foundations of generative models
+* Probability and ML
+  - En el contexto de ML tenemos que pensar en features ( $X = {x1, x2, ..., xn}$) y labels ( $Y=y$); $P(Y,X) = P(y. x1,x1,...xn)$
+- En regresion y calsificacion clasicos nos interesa saber el valor de Y dado un set de features de x. 
+- En genrative models, nos interesa conocer las features dado que la label es Y=y
+- Libro: "o andar de bebado". sobre probabilidad
+- Teorema Bayes: $posterior = \frac{prior \times likelihood}{evidence}$
+- Discriminative models: P(label|features) 
+  - Logistic regression
+  - SVM
+  - Redes Neuronales
+  - Random forest
+  + Se centran en buscar el hiperplano de separacion de los datos clasificacos como ]diferentes
+- **Generative models**: Rewrite Bayes: $P(X|Y=y) = P(X,Y)/p(y)$
+  + Se usa p(x,Y) to _sample_ new data
+- __Latent variables__ concepto claves. variables que no pueden ser registradas directamente sobe el objeto de estudio, pero se pueden inferir a partir de las features medidas
+
+#### Warming up with LDA
+* LDA: Latent Dirichlet Allocation. Model for topic modelling; El topico (cluster de informacion identica "palabras" compartida en una serie de documentos). El topico en este caso es latente, porque no sabemos como se van agrupar,en que docuemnto estan ni con que frecuencia;
+* Bayesian network based en Dirichlet distributon
+  - Observabl variables: words
+  - latent variables: topics
+* Goals:
+  - Discovering topics in a corpus of word
+  - the proportion of this topics in each document
+* Assuming that:
+  - each document is a mixture of latent topics
+  - each topic 
+
+### Deep generative Models
+
 
