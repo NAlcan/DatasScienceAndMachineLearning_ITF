@@ -243,3 +243,29 @@ _Batch normalization_ is very useful to standardize local activations and elimin
   - Training
   - fine tunning
 
+#### Autoencoders
+* Autoencoders sirven para aprender representations
+* Se le da de input una muestra de los datos, y de output develve una version similar a los datos
+* Se entrenan por backpropagation
+* NOT a generative model and NOT supervised
+* they are used to learn a representations in a latent feature space (bottleneck)
+* Input is an image, output is teh same image with less noise
+* El foco esta en aprender la representacion latente (con sus pesos y sus funciones de activacion)
+
+#### Variational Autoencoders (VAE)
+* Este si es un modelo generativo. No supervisado. Usa una arcquitectura similar a los Autoencoders
+* In the bottleneck, VAE learns a posterior
+* La diferencia con los AE es que aca podes controlar la representacion latente, y ṕor ende mejor control sobre el output
+
+#### Generative Adversarial Networks
+* Apartir de un training set y un random noise que es pasado por un generador (una NNet) para generar versiones fake, se les alimenta a un disciminador (otra NNet) para detectar fraudes;
+* La arquitectura parece analisis supervisado, pero en realidad no lo es porque no tenemos las etiquetas sino que se "generan en el camino"
+* Discriminator and Generator are trained separately
+
+### chatGPT
+* GPT = Generative Pre-trained Transformer
+* La tarea principal la hacen los metodos de Natural Language Processing (NLP)
+* [ChatGPT and Turing Test](https://www.nature.com/articles/d41586-023-02361-7)
+* [Attention is all you need](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwiTnqPrzvuCAxWOs5UCHXPQBNwQFnoECA4QAQ&url=https%3A%2F%2Fpapers.neurips.cc%2Fpaper%2F7181-attention-is-all-you-need.pdf&usg=AOvVaw1cAtW29vELY8ze9FV79yz3&opi=89978449). Explanin the necesity to use transformers in the context of chatGPT. The paper presents a novel sequence-to-sequence architecture for natural language processing that replaced the traditional recurrent neural networks;
+   - [Explaines on Medium](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiTnqPrzvuCAxWOs5UCHXPQBNwQFnoECCkQAQ&url=https%3A%2F%2Fmedium.com%2F%40zaiinn440%2Fattention-is-all-you-need-the-core-idea-of-the-transformer-bbfa9a749937&usg=AOvVaw0NW2TKZCKBhwHNwhjTPr77&opi=89978449)
+* 
