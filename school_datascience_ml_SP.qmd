@@ -170,7 +170,7 @@ _Batch normalization_ is very useful to standardize local activations and elimin
 * CNNs for identification and segmentation mainly differ in the predictor
  - For identificExplainableation, they use flattening followed by a pattern classifier, usually a multi-layer perceptron (MLP) due to the training by backpropagation. However, it could be a support vector machine (SVM)
 
-* For segmentation, they may use transposed and normal convolutions, batch normalization, activations, skip connections, and post-processing. Famous examples are the U-shaped architectures
+* For segmentation, they may use transposed and normal convolutions, batch normalization, activations, skip connections, and post-processing. FPC1PC2Marginal topic distribution2%5%10%12345678910Interamous examples are the U-shaped architectures
 
 ### Explainable encoders for identification and segmentation
 
@@ -192,7 +192,7 @@ _Batch normalization_ is very useful to standardize local activations and elimin
   - En el contexto de ML tenemos que pensar en features ( $X = {x1, x2, ..., xn}$) y labels ( $Y=y$); $P(Y,X) = P(y. x1,x1,...xn)$
 - En regresion y calsificacion clasicos nos interesa saber el valor de Y dado un set de features de x. 
 - En genrative models, nos interesa conocer las features dado que la label es Y=y
-- Libro: "o andar de bebado". sobre probabilidad
+- Libro: "o andar de bebado". sobrePC1PC2Marginal topic distribution2%5%10%12345678910Inter probabilidad
 - Teorema Bayes: $posterior = \frac{prior \times likelihood}{evidence}$
 - Discriminative models: P(label|features) 
   - Logistic regression
@@ -214,8 +214,32 @@ _Batch normalization_ is very useful to standardize local activations and elimin
   - the proportion of this topics in each document
 * Assuming that:
   - each document is a mixture of latent topics
-  - each topic 
+  - each topic is a distribution over words
+* Pre-processing of your data is very importante
+  - Tokenization
+  - Lemmatizacion (verbs in third person changes to first peerson, past and future to present)
+  - Stemming: words are reduced to their root form
 
 ### Deep generative Models
+* "deep" referie al numero de layers (mas especificamente las hidden layers). In 90's las redes tenian una o maximo dos hidden layers. 
 
+#### Boltzmann machine
+* Established the concepts of stastistical physiscs ( no son generative models pero son la base sobre lo que se van a basar modelos generativos)
+* They are probabilistic, unsupervised models based on energy
+* Low energy -> High probability / High energy -> Low probability
+* El objetivo es minimizar la energy function
+
+#### Restricted Boltzmann machine (RBM)
+* Es restricta por reduce el numero de conexiones entre los hidden and visible (inputs) nodes. No tiene outputs
+* __Total Energy:__ No es estrictamente un porbabilidad, es una function. You can use this functionfr representing how will the nodes will be connected. Esta funcion se puede transformar en una funcion de probabilidad que depende de los mismos parametros que la total energy
+
+#### Deep Belief Network
+* Es un stack de RBMs. El output de una RMB es utilizado como input para otra RBM
+* es posible agregar todas las RBM que se quieran con algunos riesgos;
+  + Vanishing gradient
+  + Local minima
+* Usos: 
+  - pre processing
+  - Training
+  - fine tunning
 
