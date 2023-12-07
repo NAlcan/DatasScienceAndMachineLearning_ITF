@@ -136,7 +136,7 @@ CNN parte central del deep laerning
 
 #### basic definitions and image processing operations
 
-* Multichannel image: Canales en los que se puede descomponer una imagen; El numero de convolutional filters que se usen, se transforma en el numero de canales. Un imagen 3D en escala de gris de un tomografo, es en un canal. pero si luego aplicamos 10 filtros, se transforma en una imagen de 10 canales
+* Multichannel image: Canales en los que se puede descomponer una imagen; El numero de convolutional filters que se usen, se transforma en el numero de canales. Un imagen 3D en escala de gris de un tomogrthiago.tomei@unesp.brafo, es en un canal. pero si luego aplicamos 10 filtros, se transforma en una imagen de 10 canales
 $m$ es el número de canales. Una imagen visible en RGB, m=3. 
 Para m=3 canales, cada pixel p es representado por un punto $I(p) = (I1(p), I2(p), I3(p)) \in R^{3}$
 
@@ -202,7 +202,7 @@ _Batch normalization_ is very useful to standardize local activations and elimin
   + Se centran en buscar el hiperplano de separacion de los datos clasificacos como ]diferentes
 - **Generative models**: Rewrite Bayes: $P(X|Y=y) = P(X,Y)/p(y)$
   + Se usa p(x,Y) to _sample_ new data
-- __Latent variables__ concepto claves. variables que no pueden ser registradas directamente sobe el objeto de estudio, pero se pueden inferir a partir de las features medidas
+- __Latent variables__ concepto claves. thiago.tomei@unesp.brvariables que no pueden ser registradas directamente sobe el objeto de estudio, pero se pueden inferir a partir de las features medidas
 
 #### Warming up with LDA
 * LDA: Latent Dirichlet Allocation. Model for topic modelling; El topico (cluster de informacion identica "palabras" compartida en una serie de documentos). El topico en este caso es latente, porque no sabemos como se van agrupar,en que docuemnto estan ni con que frecuencia;
@@ -233,7 +233,7 @@ _Batch normalization_ is very useful to standardize local activations and elimin
 * Es restricta por reduce el numero de conexiones entre los hidden and visible (inputs) nodes. No tiene outputs
 * __Total Energy:__ No es estrictamente un porbabilidad, es una function. You can use this functionfr representing how will the nodes will be connected. Esta funcion se puede transformar en una funcion de probabilidad que depende de los mismos parametros que la total energy
 
-#### Deep Belief Network
+#### Deep Belief Networkthiago.tomei@unesp.br
 * Es un stack de RBMs. El output de una RMB es utilizado como input para otra RBM
 * es posible agregar todas las RBM que se quieran con algunos riesgos;
   + Vanishing gradient
@@ -268,4 +268,24 @@ _Batch normalization_ is very useful to standardize local activations and elimin
 * [ChatGPT and Turing Test](https://www.nature.com/articles/d41586-023-02361-7)
 * [Attention is all you need](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwiTnqPrzvuCAxWOs5UCHXPQBNwQFnoECA4QAQ&url=https%3A%2F%2Fpapers.neurips.cc%2Fpaper%2F7181-attention-is-all-you-need.pdf&usg=AOvVaw1cAtW29vELY8ze9FV79yz3&opi=89978449). Explanin the necesity to use transformers in the context of chatGPT. The paper presents a novel sequence-to-sequence architecture for natural language processing that replaced the traditional recurrent neural networks;
    - [Explaines on Medium](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiTnqPrzvuCAxWOs5UCHXPQBNwQFnoECCkQAQ&url=https%3A%2F%2Fmedium.com%2F%40zaiinn440%2Fattention-is-all-you-need-the-core-idea-of-the-transformer-bbfa9a749937&usg=AOvVaw0NW2TKZCKBhwHNwhjTPr77&opi=89978449)
+
+
+# Dia 4
+
+## Natural Languaje Processing
+
+### What is natural languaje processing and computational Linguistics
+* A field of scientific and technological research
+* It was originated from the attemp to create computer programs to translate texts from Russian to English
+* Languaje is related the way you think
+* NLP is not part of ML strictly (more related to AI) but it uses lot of the techniques from ML
+* Tareas del NLP:
+  - Translation
+  - classification (sentiment analysis, Spam Detection, etc)
+  - Regression
+  - clustering
+  - tagging
+  - Generation
+
+### Which models are the state-of-art in natural languaje processing and computational Linguistics
 * 
